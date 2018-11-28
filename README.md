@@ -22,10 +22,10 @@ This repo aims to track and highlight prioritisation issues – if they get fixe
 
 Pay close attention to requests 33-36, these are resources that can't be discovered by the pre-parser so their requests start later than the image requests before them, but as they have a higher priority their frames should be re-prioritized ahead of the images.
 
-CloudFlare - reprioritizes the requests
+**CloudFlare - reprioritizes the requests**
 ![Waterfall with important resources being reprioritised](images/cloudflare.png)
 
-CloudFront - requests are only partially reprioritized
+**CloudFront - requests are only partially reprioritized**
 ![Waterfall with important resources being reprioritised](images/cloudfront.png)
 
 If requests 33-36 don't appear to be prioritised correctly, please raise an issue with the relevant project or vendor.

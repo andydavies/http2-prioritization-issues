@@ -37,14 +37,18 @@ If you create an issue in this repo with a link to your test (whether good or ba
 
 TODO(AD) add table of know tests here servers / CDNs as rows, browsers as columns???
 
-### CDNs
+### CDNs / Cloud Hosting Services
 
-| CDN         | WPT URL      |
-| ----------- | ------------ |
-| Akamai      |
-| Cloudflare  |
-| CloudFront  |
-| Fastly      |
+| CDN / Hosting  | Status | WPT URL 
+| -------------- | ------ | ------- 
+| Akamai         | Pass   | https://www.webpagetest.org/result/181128_WJ_4f388eef1d2e03e513ff74214860d2f0/5/details/
+| Cloudflare     | Pass   | https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/6/details/
+| CloudFront     | Fail   | https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/8/details/
+| Fastly         | Fail   | https://www.webpagetest.org/result/181126_J0_0c0c0556ced1277ea34881b0b0b1d759/6/details/
+| Firebase       | Fail   | https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/8/details/
+| Google Storage | Fail   | https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/7/details/
+| Netlify        | Fail++ | https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/8/details/
+
 
 
 ### Servers

@@ -37,5 +37,17 @@ If you create an issue in this repo with a link to your test (whether good or ba
 
 TODO(AD) add table of know tests here servers / CDNs as rows, browsers as columns???
 
+### CDNs
+
+| CDN         | WPT URL      |
+| ----------- | ------------ |
+| Akamai      |
+| Cloudflare  |
+| CloudFront  |
+| Fastly      |
+
+
+### Servers
+
 
 

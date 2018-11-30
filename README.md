@@ -44,6 +44,7 @@ It is important to note that what matters most is whatever the edge is that term
 
 | CDN / Hosting           | Status        | Test Result                                                                                    | Tested By 
 | ----------------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
+| Akamai                  | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181128_WJ_4f388eef1d2e03e513ff74214860d2f0/) | [Stephen Ludin](https://twitter.com/sludin)
 | Amazon CloudFront       | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Andy Davies](https://twitter.com/AndyDavies)
 | Cloudflare              | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | Google Firebase         | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)

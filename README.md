@@ -17,7 +17,7 @@ This repo aims to track and highlight prioritisation issues – if they get fixe
 
 ## Getting Started
 
-[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities) is the easiest way to get started – deploy it on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the 3G network profile. Deploy the page EXACTLY as-is as it is designed to exercise Chrome's prioritisation logic. It is easy to restructure the page to make it load faster but that is not the point of the test, the point is to see how well a server can reprioritise in-flight requests when a higher-priority request comes along.
+[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities) is the easiest way to get started – deploy it on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the 3G network profile. Deploy the page EXACTLY as-is as it is designed to exercise Chrome's prioritisation logic. It is easy to restructure the page to make it load faster but that is not the point of the test, the point is to see how well a server can reprioritise in-flight requests when a higher-priority request comes along. It is also recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
 
 Pay close attention to requests 33-36, these are resources that can't be discovered by the pre-parser so their requests start later than the image requests before them, but as they have a higher priority their frames should be re-prioritized ahead of the images.
 
@@ -42,14 +42,15 @@ It is important to note that what matters most is whatever the edge is that term
 
 ### CDNs / Cloud Hosting Services
 
-| CDN / Hosting     | Status        | Test Result                                                                                    | Tested By 
-| ----------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
-| Amazon CloudFront | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Andy Davies](https://twitter.com/AndyDavies)
-| Cloudflare        | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Google Firebase   | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Google Storage    | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Microsoft Azure   | FAIL &#10060; | [Nov 29, 2018](https://www.webpagetest.org/result/181129_31_90c38d46fe43105554bbcb05dcb25378/) | [Andy Davies](https://twitter.com/AndyDavies)
-| Netlify           | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| CDN / Hosting           | Status        | Test Result                                                                                    | Tested By 
+| ----------------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
+| Amazon CloudFront       | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Andy Davies](https://twitter.com/AndyDavies)
+| Cloudflare              | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| Google Firebase         | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| Google Storage          | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| Microsoft Azure         | FAIL &#10060; | [Nov 29, 2018](https://www.webpagetest.org/result/181129_31_90c38d46fe43105554bbcb05dcb25378/) | [Andy Davies](https://twitter.com/AndyDavies)
+| Netlify                 | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| StackPath/NetDNA/MaxCDN | FAIL &#10060; | [Nov 30, 2018](https://www.webpagetest.org/result/181130_X6_5b0ee849de726e1a425fcfec9f3caf5f/) | [Patrick Meenan](https://twitter.com/patmeenan)
 
 
 ### Load Balancers

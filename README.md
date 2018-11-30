@@ -49,7 +49,7 @@ It is important to note that what matters most is whatever the edge is that term
 | Google Firebase         | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | Google Storage          | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | Microsoft Azure         | FAIL &#10060; | [Nov 29, 2018](https://www.webpagetest.org/result/181129_31_90c38d46fe43105554bbcb05dcb25378/) | [Andy Davies](https://twitter.com/AndyDavies)
-| Netlify                 | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| Netlify                 | FAIL &#10060; | [Nov 27, 2018](https://www.webpagetest.org/result/181127_79_b033d66f92f6ba47e11b17c06921486a/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | StackPath/NetDNA/MaxCDN | FAIL &#10060; | [Nov 30, 2018](https://www.webpagetest.org/result/181130_X6_5b0ee849de726e1a425fcfec9f3caf5f/) | [Patrick Meenan](https://twitter.com/patmeenan)
 
 

@@ -47,6 +47,7 @@ It is important to note that what matters most is whatever the edge is that term
 | Akamai                  | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181128_WJ_4f388eef1d2e03e513ff74214860d2f0/) | [Stephen Ludin](https://twitter.com/sludin)
 | Amazon CloudFront       | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Andy Davies](https://twitter.com/AndyDavies)
 | Cloudflare              | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| Fastly                  | FAIL &#10060; | [Nov 30, 2018](https://www.webpagetest.org/result/181130_6R_ebaa7da93fb92350c1350ab7c0690d41/) | [Ryan Townsend](https://twitter.com/ryantownsend)
 | Google Firebase         | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | Google Storage          | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/) | [Patrick Meenan](https://twitter.com/patmeenan)
 | Microsoft Azure         | FAIL &#10060; | [Nov 29, 2018](https://www.webpagetest.org/result/181129_31_90c38d46fe43105554bbcb05dcb25378/) | [Andy Davies](https://twitter.com/AndyDavies)

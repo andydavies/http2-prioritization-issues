@@ -57,10 +57,11 @@ It is important to note that what matters most is whatever the edge is that term
 
 ### Load Balancers
 
-This is for cloud or on-premises load balancers (Amazon ELB, Citrix Netscaler, Foundry F5, etc).
+This is for cloud or on-premises load balancers (Amazon ALB, Citrix Netscaler, Foundry F5, etc).
 
 | Load Balancer     | Status        | Test Result                                                                                    | Tested By 
 | ----------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
+| Amazon AWS ALB    | FAIL &#10060; | [Dec 3, 2018](https://www.webpagetest.org/result/181203_PE_654d3b72ba3043836846292c22919e12/)  | [Patrick Meenan](https://twitter.com/patmeenan)
 
 ### Servers
 

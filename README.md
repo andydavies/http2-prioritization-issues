@@ -17,21 +17,23 @@ This repo aims to track and highlight prioritisation issues – if they get fixe
 
 ## Getting Started
 
-[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities) is the easiest way to get started – deploy it on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the 3G network profile. Deploy the page EXACTLY as-is as it is designed to exercise Chrome's prioritisation logic. It is easy to restructure the page to make it load faster but that is not the point of the test, the point is to see how well a server can reprioritise in-flight requests when a higher-priority request comes along. It is also recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
+[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone) is the easiest way to get started – find an appropriate image on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the 3G network profile. It is recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
 
-Pay close attention to requests 33-36, these are resources that can't be discovered by the pre-parser so their requests start later than the image requests before them, but as they have a higher priority their frames should be re-prioritized ahead of the images.
+Pay close attention to requests 33-34, these are high-priority visible images that are loaded after the low-priority images start to load. They have a higher priority so their frames should be re-prioritized ahead of the earlier images.
 
 **CloudFlare - reprioritizes the requests**
 ![Waterfall with important resources being reprioritised](images/cloudflare.png)
 
 **CloudFront - requests are only partially reprioritized**
-![Waterfall with important resources being reprioritised](images/cloudfront.png)
+![Waterfall with important resources being partially reprioritised](images/cloudfront.png)
 
-If requests 33-36 don't appear to be prioritised correctly, please raise an issue with the relevant project or vendor.
+**Netlify - requests are not reprioritized**
+![Waterfall with important resources not being reprioritised](images/netlify.png)
+
+If requests 33-34 don't appear to be prioritised correctly, please raise an issue with the relevant project or vendor.
 
 Visually the difference can be quite dramatic in the filmstrip view:
 ![Waterfall with important resources being reprioritised](images/filmstrip.png)
-
 
 ## Current Status
 
@@ -39,32 +41,77 @@ If you create an issue in this repo with a link to your test (whether good or ba
 
 It is important to note that what matters most is whatever the edge is that terminates the HTTP/2 connection from the browser. For example, if you have a CDN in front of a hosting provider (or load balancer) then the CDN will be the thing being tested (and that has the most impact). That also means that you can potentially solve broken prioritisation by putting your site behind a CDN that passes.
 
-
 ### CDNs / Cloud Hosting Services
 
-| CDN / Hosting           | Status        | Test Result                                                                                    | Tested By 
-| ----------------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
-| Akamai                  | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181128_WJ_4f388eef1d2e03e513ff74214860d2f0/) | [Stephen Ludin](https://twitter.com/sludin)
-| Amazon CloudFront       | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_05_fafd92c1036649029f5392851e0234c2/) | [Andy Davies](https://twitter.com/AndyDavies)
-| Cloudflare              | Pass &#9989;  | [Nov 26, 2018](https://www.webpagetest.org/result/181126_G7_3abfb12925925f8debe527c779c46dfe/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Fastly                  | FAIL &#10060; | [Nov 30, 2018](https://www.webpagetest.org/result/181130_6R_ebaa7da93fb92350c1350ab7c0690d41/) | [Ryan Townsend](https://twitter.com/ryantownsend)
-| Google Firebase         | FAIL &#10060; | [Nov 28, 2018](https://www.webpagetest.org/result/181128_PA_9c3c428698111b81df1cc6eef2e0520c/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Google Storage          | FAIL &#10060; | [Nov 26, 2018](https://www.webpagetest.org/result/181126_XF_361c1789d782990b27a0141e838694bf/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| Microsoft Azure         | FAIL &#10060; | [Nov 29, 2018](https://www.webpagetest.org/result/181129_31_90c38d46fe43105554bbcb05dcb25378/) | [Andy Davies](https://twitter.com/AndyDavies)
-| Netlify                 | FAIL &#10060; | [Nov 27, 2018](https://www.webpagetest.org/result/181127_79_b033d66f92f6ba47e11b17c06921486a/) | [Patrick Meenan](https://twitter.com/patmeenan)
-| StackPath/NetDNA/MaxCDN | FAIL &#10060; | [Nov 30, 2018](https://www.webpagetest.org/result/181130_X6_5b0ee849de726e1a425fcfec9f3caf5f/) | [Patrick Meenan](https://twitter.com/patmeenan)
+| CDN / Hosting                      | Status         | Test Result
+| ---------------------------------- | -------------- | ----------------------------------------------------------------------------------------------
+| Akamai                             | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_MJ_fd74e8439430fe5b18f29da87fd69fb6/)
+| Amazon CloudFront                  | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_HW_4cfd0b2036d3b90675f6ba06bd00111d/)
+| BitGravity                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_XS_7b823220707a4a3b4231a36b4d2c093e/)
+| Cachefly                           | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_FJ_c6a7f6fb45ecf90ce812071663f82409/)
+| CDN77                              | FAIL &#10060;* | [Dec 22, 2018](https://www.webpagetest.org/result/181222_QK_71d76ab8e1360fbc6f9cb5c2aa5a43dc/)
+| CDNetworks                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_B3_780bec18802592e5869e1784eec84fec/)
+| CDNsun                             | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_29_733fd3fa96653a5aac6d13df92d80cbd/)
+| ChinaCache                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_5G_b5b88afa1d52329fbb45528ec81d1184/)
+| Cloudflare                         | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_7X_2827222a58ea6c1e29163492042a6485/)
+| DreamHost                          | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_8M_434a7afb0e4b7e6370d8514088780d19/)
+| Edgecast                           | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_VH_057e3cdecde9fbe6ab207a5e9d6ff4cf/)
+| Facebook                           | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_KP_e476988aa243325871f5b311ca36ff41/)
+| Fastly                             | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_ZR_ed26f1066e51f9ef689aba928646ebb7/)
+| Google Firebase                    | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_2J_672ef37fa5e6839a13690b3aee2827f5/)
+| Google Storage                     | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_0E_9892f5f67fa74c326f383d7986cc0f7b/)
+| Highwinds                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_MC_a93fb906376f8fdca8d01506d02c07c1/)
+| Incapsula                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_XJ_cb2971fdb79064709a0efcbcd344aedf/)
+| Instart Logic                      | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_FB_948cce8656c4a3e8d9d3de3d25a74893/)
+| KeyCDN                             | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_YW_2db8620b2c0045fbcd23d6f335a648ca/)
+| LeaseWeb CDN                       | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_79_a0de157a0bf55413f4b7c603f1c8c475/)
+| Level 3                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_1Y_9d52f3eb45ddf7eff8795dad4fe1285f/)
+| Limelight                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_81_8d73f113cc7a8bbde665f73597e25822/)
+| Medianova                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_SF_cdeb2e45fa4e14f0f6f328be892f5618/)
+| Microsoft Azure                    | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_HG_306f655f8ae21d42399eefc289666426/)
+| Netlify                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_JT_1430ee171f79084a31aa7f3d2e25d808/)
+| Reflected Networks                 | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_WW_180c24d9f2f49ace2872be7da9290d4d/)
+| Rocket CDN                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_13_0fae55c68ea5bd100b539f2266dd4f0d/)
+| Sucuri Firewall                    | FAIL &#10060;* | [Dec 22, 2018](https://www.webpagetest.org/result/181222_TF_1066ad690da150f7c82b44c070f2425e/)
+| StackPath/NetDNA/MaxCDN            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_TA_8e1d0e32fa9db6d9622d00941836d4d4/)
+| WordPress.com                      | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_C4_8b6b808b7c3f6e8e3ad96e9f6af57902/)
+| WordPress.com Jetpack CDN (Photon) | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_Q7_60c0f336ee9ec40f81f3f606085125e3/)
+| Yottaa                             | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_CN_ad391da7669f125210f192b443d84623/)
+| Zenedge                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_04_da222c56d629290bbbcdd2aa91ac384b/)
 
+\* Intermittent Failure
 
 ### Load Balancers
 
 This is for cloud or on-premises load balancers (Amazon ALB, Citrix Netscaler, Foundry F5, etc).
 
-| Load Balancer     | Status        | Test Result                                                                                    | Tested By 
-| ----------------- | ------------- | ---------------------------------------------------------------------------------------------- | -----------
-| Amazon AWS ALB    | FAIL &#10060; | [Dec 3, 2018](https://www.webpagetest.org/result/181203_PE_654d3b72ba3043836846292c22919e12/)  | [Patrick Meenan](https://twitter.com/patmeenan)
+| Load Balancer     | Status        | Test Result
+| ----------------- | ------------- | ----------------------------------------------------------------------------------------------
+| Amazon AWS ALB    | FAIL &#10060; | [Dec 3, 2018](https://www.webpagetest.org/result/181203_PE_654d3b72ba3043836846292c22919e12/)
 
 ### Servers
 
 Most servers technically support HTTP/2 prioritisation but are effectively broken when deployed because of buffering in the networking path (within the server, in the TCP stack or in the network itself). Read more about it [here](https://blog.cloudflare.com/http-2-prioritization-with-nginx/).
 
 TODO: Add notes about configuration settings to get prioritisation working for various operating systems and servers.
+
+### Finding Test Images
+
+The [HTTP Archive BigQuery dataset](https://bigquery.cloud.google.com/dataset/httparchive:requests) is particularly useful for finding images for a given CDN or host for testing.
+
+Here is a sample query (warning, each query run can consume close to 1TB of BigQuery quota):
+
+```sql
+select
+  RTRIM(LTRIM(JSON_EXTRACT(payload, '$._full_url'),"\""),"\"") as url,
+  INTEGER(JSON_EXTRACT(payload, '$._bytesIn')) as size
+FROM
+  [httparchive:requests.2018_12_01_desktop]
+WHERE
+  RTRIM(LTRIM(JSON_EXTRACT(payload, '$._protocol'),"\""),"\"") = "HTTP/2" AND
+  RTRIM(LTRIM(JSON_EXTRACT(payload, '$._contentType'),"\""),"\"") LIKE "image/%" AND
+  INTEGER(JSON_EXTRACT(payload, '$._bytesIn')) > 90000 AND
+  INTEGER(JSON_EXTRACT(payload, '$._bytesIn')) < 110000 AND
+  RTRIM(LTRIM(JSON_EXTRACT(payload, '$._cdn_provider'),"\""),"\"") = "Cloudflare"
+LIMIT 20
+```

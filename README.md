@@ -72,6 +72,7 @@ It is important to note that what matters most is whatever the edge is that term
 | Netlify                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_JT_1430ee171f79084a31aa7f3d2e25d808/)
 | Reflected Networks                 | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_WW_180c24d9f2f49ace2872be7da9290d4d/)
 | Rocket CDN                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_13_0fae55c68ea5bd100b539f2266dd4f0d/)
+| section.io                         | Pass &#9989;   | [Jan 1, 2019](https://www.webpagetest.org/result/190117_FF_6f7d90fb39e2614b8850a40f391ceeba/)
 | Sucuri Firewall                    | FAIL &#10060;* | [Dec 22, 2018](https://www.webpagetest.org/result/181222_TF_1066ad690da150f7c82b44c070f2425e/)
 | StackPath/NetDNA/MaxCDN            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_TA_8e1d0e32fa9db6d9622d00941836d4d4/)
 | WordPress.com                      | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_C4_8b6b808b7c3f6e8e3ad96e9f6af57902/)

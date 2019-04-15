@@ -17,7 +17,7 @@ This repo aims to track and highlight prioritisation issues – if they get fixe
 
 ## Getting Started
 
-[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone) is the easiest way to get started – find an appropriate image on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the 3G network profile. It is recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
+[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone) is the easiest way to get started – find an appropriate image on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the "3G Fast" network profile (do not use 3G, as of Chrome 74 Chrome restricts the number of in-flight requests on low-speed connections). It is recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
 
 Pay close attention to requests 33-34, these are high-priority visible images that are loaded after the low-priority images start to load. They have a higher priority so their frames should be re-prioritized ahead of the earlier images.
 

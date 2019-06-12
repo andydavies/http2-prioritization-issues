@@ -58,6 +58,7 @@ It is important to note that what matters most is whatever the edge is that term
 | Edgecast                           | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_VH_057e3cdecde9fbe6ab207a5e9d6ff4cf/)
 | Facebook                           | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_KP_e476988aa243325871f5b311ca36ff41/)
 | Fastly                             | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_ZR_ed26f1066e51f9ef689aba928646ebb7/)
+| Google Cloud CDN                   | FAIL &#10060;  | [June 12, 2019](https://www.webpagetest.org/result/190612_WA_21ea483d686d259827f7c858aba04ee0/)
 | Google Firebase                    | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_2J_672ef37fa5e6839a13690b3aee2827f5/)
 | Google Storage                     | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_0E_9892f5f67fa74c326f383d7986cc0f7b/)
 | Highwinds                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_MC_a93fb906376f8fdca8d01506d02c07c1/)

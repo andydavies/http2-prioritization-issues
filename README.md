@@ -17,7 +17,7 @@ This repo aims to track and highlight prioritisation issues – if they get fixe
 
 ## Getting Started
 
-[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone) is the easiest way to get started – find an appropriate image on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the "3G Fast" network profile (do not use 3G, as of Chrome 74 Chrome restricts the number of in-flight requests on low-speed connections). It is recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
+[@PatMeenan's http2priorities test page](https://github.com/pmeenan/http2priorities/tree/master/stand-alone) is the easiest way to get started – find an appropriate image on your server / host / CDN of choice and then test it using Chrome with [WebPageTest](https://www.webpagetest.org/) using the **"3G Fast"** network profile (do not use 3G, as of Chrome 74 Chrome restricts the number of in-flight requests on low-speed connections). It is recommended that you do a full 9 runs to make sure it consistently passes and is not intermittent.
 
 Pay close attention to requests 33-34, these are high-priority visible images that are loaded after the low-priority images start to load. They have a higher priority so their frames should be re-prioritized ahead of the earlier images.
 
@@ -46,7 +46,7 @@ It is important to note that what matters most is whatever the edge is that term
 | CDN / Hosting                      | Status         | Test Result
 | ---------------------------------- | -------------- | ----------------------------------------------------------------------------------------------
 | Akamai                             | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_MJ_fd74e8439430fe5b18f29da87fd69fb6/)
-| Amazon CloudFront                  | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_HW_4cfd0b2036d3b90675f6ba06bd00111d/)
+| Amazon CloudFront                  | FAIL &#10060;  | [Nov 28, 2019](https://www.webpagetest.org/result/191128_E6_8f81ddf9ba2ba82ef814fff7baaa5005/)
 | BitGravity                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_XS_7b823220707a4a3b4231a36b4d2c093e/)
 | Cachefly                           | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_FJ_c6a7f6fb45ecf90ce812071663f82409/)
 | CDN77                              | FAIL &#10060;* | [Dec 22, 2018](https://www.webpagetest.org/result/181222_QK_71d76ab8e1360fbc6f9cb5c2aa5a43dc/)
@@ -70,7 +70,7 @@ It is important to note that what matters most is whatever the edge is that term
 | Limelight                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_81_8d73f113cc7a8bbde665f73597e25822/)
 | Medianova                          | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_SF_cdeb2e45fa4e14f0f6f328be892f5618/)
 | Microsoft Azure                    | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_HG_306f655f8ae21d42399eefc289666426/)
-| Netlify                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_JT_1430ee171f79084a31aa7f3d2e25d808/)
+| Netlify                            | FAIL &#10060;  | [Nov 28, 2019](https://www.webpagetest.org/result/191128_57_d46f21fe3ea067e72a78203bd1e51405/)
 | Reflected Networks                 | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_WW_180c24d9f2f49ace2872be7da9290d4d/)
 | Rocket CDN                         | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_13_0fae55c68ea5bd100b539f2266dd4f0d/)
 | section.io                         | Pass &#9989;   | [Jan 1, 2019](https://www.webpagetest.org/result/190117_FF_6f7d90fb39e2614b8850a40f391ceeba/)
@@ -90,6 +90,7 @@ This is for cloud or on-premises load balancers (Amazon ALB, Citrix Netscaler, F
 | Load Balancer     | Status        | Test Result
 | ----------------- | ------------- | ----------------------------------------------------------------------------------------------
 | Amazon AWS ALB    | FAIL &#10060; | [Dec 3, 2018](https://www.webpagetest.org/result/181203_PE_654d3b72ba3043836846292c22919e12/)
+| Foundry F5        | FAIL &#10060; | [Nov 28, 2019](https://webpagetest.org/result/191128_GN_f5be7638e6f688d1202093cc72a5efe9/)
 
 ### Servers
 

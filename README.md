@@ -79,6 +79,7 @@ It is important to note that what matters most is whatever the edge is that term
 | WordPress.com                      | Pass &#9989;   | [Dec 22, 2018](https://www.webpagetest.org/result/181222_C4_8b6b808b7c3f6e8e3ad96e9f6af57902/)
 | WordPress.com Jetpack CDN (Photon) | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_Q7_60c0f336ee9ec40f81f3f606085125e3/)
 | Yottaa                             | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_CN_ad391da7669f125210f192b443d84623/)
+| Zeit                               | FAIL &#10060;  | [Feb 02, 2020](https://www.webpagetest.org/result/200202_RK_3ca770d7a33101fabebb9352b9acb303/)
 | Zenedge                            | FAIL &#10060;  | [Dec 22, 2018](https://www.webpagetest.org/result/181222_04_da222c56d629290bbbcdd2aa91ac384b/)
 
 \* Intermittent Failure
